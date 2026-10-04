@@ -61,13 +61,13 @@ st.sidebar.info(
 )
 
 # ─────────────────────────────────────────────
-# PAGE 1
+# PAGE 1 — INTRODUCTION
 # ─────────────────────────────────────────────
 if view_mode == "1. Project Introduction":
     st.title("End-to-End Geospatial Data Analysis of Urban Heat Island Dynamics in Uyo LGA")
     st.markdown("### A Decadal Multi-Temporal Study (2016 · 2019 · 2022 · 2025)")
     st.caption(
-        "Industrial Training Project · Data Analysis · "
+        "Industrial Training Project · Department of Computer Science · "
         "Advanced Space Technology And Applications Laboratories, Uyo, Akwa Ibom State"
     )
 
@@ -92,8 +92,7 @@ if view_mode == "1. Project Introduction":
 
     st.markdown("### Acknowledgements")
     st.markdown("""
-    I appreciate my academic supervisors and the Department of Data Analysis for guidance throughout
-    this Industrial Training defence project. Special thanks go to the management and staff of
+    I appreciate the board of management and staff of
     **Advanced Space Technology And Applications Laboratories, Uyo, Akwa Ibom State**, for the
     placement opportunity, mentorship, and exposure to operational Earth Observation and GIS workflows
     that shaped this study.
@@ -148,7 +147,7 @@ if view_mode == "1. Project Introduction":
         """)
 
 # ─────────────────────────────────────────────
-# PAGE 2
+# PAGE 2 — KPI OVERVIEW
 # ─────────────────────────────────────────────
 elif view_mode == "2. Executive KPI Overview" and data_loaded:
     st.title("📊 Executive KPI Overview")
@@ -195,7 +194,7 @@ elif view_mode == "2. Executive KPI Overview" and data_loaded:
         """)
 
 # ─────────────────────────────────────────────
-# PAGE 3
+# PAGE 3 — THERMAL MAPS
 # ─────────────────────────────────────────────
 elif view_mode == "3. Thermal Maps (All 4 Epochs)":
     st.title("🗺️ Surface Thermal Signature: All 4 Epochs")
@@ -238,7 +237,7 @@ elif view_mode == "3. Thermal Maps (All 4 Epochs)":
         """)
 
 # ─────────────────────────────────────────────
-# PAGE 4
+# PAGE 4 — LAND COVER
 # ─────────────────────────────────────────────
 elif view_mode == "4. Land Cover Maps (4 Classes)":
     st.title("🗺️ Four-Class Land Surface Maps")
@@ -341,7 +340,7 @@ Cloud / Mask    : QA_PIXEL cloud and shadow bits
         """)
 
 # ─────────────────────────────────────────────
-# PAGE 5
+# PAGE 5 — TIME SERIES
 # ─────────────────────────────────────────────
 elif view_mode == "5. Decadal Time-Series Trends" and data_loaded:
     st.title("📈 Decadal Time-Series Trends (2016 - 2025)")
@@ -403,7 +402,7 @@ elif view_mode == "5. Decadal Time-Series Trends" and data_loaded:
         """)
 
 # ─────────────────────────────────────────────
-# PAGE 6 — OLS with clear colours
+# PAGE 6 — OLS
 # ─────────────────────────────────────────────
 elif view_mode == "6. Statistical Relationships (OLS)":
     st.title("🔬 Statistical Relationships (Ordinary Least Squares)")
@@ -433,7 +432,7 @@ elif view_mode == "6. Statistical Relationships (OLS)":
         c1, c2 = st.columns(2)
         with c1:
             st.subheader("🌿 Vegetation cools the surface")
-            st.caption("Green points = vegetation relationship (NDVI). Not blue.")
+            st.caption("Green points = vegetation relationship (NDVI).")
             fig1 = px.scatter(
                 df_plot,
                 x="NDVI",
@@ -453,7 +452,7 @@ elif view_mode == "6. Statistical Relationships (OLS)":
 
         with c2:
             st.subheader("🏙️ Built-up heats the surface")
-            st.caption("Orange points = built-up relationship (NDBI). Not blue.")
+            st.caption("Orange points = built-up relationship (NDBI).")
             fig2 = px.scatter(
                 df_plot,
                 x="NDBI",
@@ -522,7 +521,7 @@ elif view_mode == "6. Statistical Relationships (OLS)":
         st.dataframe(df_reg, use_container_width=True)
 
 # ─────────────────────────────────────────────
-# PAGE 7
+# PAGE 7 — METHODOLOGY
 # ─────────────────────────────────────────────
 elif view_mode == "7. Full Methodology & Documentation":
     st.title("📖 Full Project Methodology & Documentation")
@@ -660,7 +659,7 @@ elif view_mode == "7. Full Methodology & Documentation":
 
     ## 10. Reproducibility and software stack
 
-    - **Language:** Python 3  
+    - **Language:** Python 3   
     - **Cloud processing environment:** Google Colab  
     - **Local development environment:** Visual Studio Code (VS Code)  
     - **Version control and hosting:** Git, GitHub, Streamlit Community Cloud  
