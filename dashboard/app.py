@@ -55,7 +55,7 @@ st.sidebar.success(
     "Use the year selector on the KPI page when you want one year in focus."
 )
 st.sidebar.info(
-    "Defence tip: When asked 'what did you build?', say: "
+    "short note: 'what is this actually?', This is: "
     "a reproducible geospatial framework that turns free Landsat data into "
     "maps, statistics, and a live dashboard for Uyo LGA."
 )
@@ -137,9 +137,9 @@ if view_mode == "1. Project Introduction":
     7. Open the full technical methodology and references  
     """)
 
-    with st.expander("💬 One-minute pitch you can use in the defence"):
+    with st.expander("💬 A Little pitch from the creator"):
         st.markdown("""
-        *"I built an open geospatial framework that ingests Landsat Level-2 imagery for Uyo LGA,
+        *"This geospatial framework ingests Landsat Level-2 imagery for Uyo LGA,
         derives temperature and land-cover indicators for 2016, 2019, 2022 and 2025, and publishes
         the results in a live dashboard. The evidence shows vegetation is associated with cooler
         surfaces and built-up cover with hotter surfaces, which supports targeted greening for
@@ -185,7 +185,7 @@ elif view_mode == "2. Executive KPI Overview" and data_loaded:
         """
     )
 
-    with st.expander("❓ Likely panel question: Why is mean LST not always higher in later years?"):
+    with st.expander("❓ Quick question: Why is mean LST not always higher in later years?"):
         st.markdown("""
         Because each Landsat scene is a morning snapshot. Air mass, humidity, and recent rainfall
         differ by date. A cooler city-mean in a later year does **not** cancel the urban heat mechanism.
@@ -200,7 +200,6 @@ elif view_mode == "3. Thermal Maps (All 4 Epochs)":
     st.title("🗺️ Surface Thermal Signature: All 4 Epochs")
     st.markdown(
         "Side-by-side Land Surface Temperature (LST) maps for **2016, 2019, 2022 and 2025**. "
-        "Each panel includes title, north arrow, and temperature scale."
     )
 
     if os.path.exists("figures/fig3_spatial_lst_comparison.png"):
@@ -229,7 +228,7 @@ elif view_mode == "3. Thermal Maps (All 4 Epochs)":
     | Strongly above mean | Hot / strong UHI | Priority mitigation zone |
     """)
 
-    with st.expander("💬 What should I say while pointing at these maps?"):
+    with st.expander("💬 Short notes regarding the maps?"):
         st.markdown("""
         *"These are land surface temperatures, not air temperatures. The bright cores mark surfaces
         that heated strongly by mid-morning overpass. Grey holes are intentional quality masking of
@@ -394,7 +393,7 @@ elif view_mode == "5. Decadal Time-Series Trends" and data_loaded:
         """
     )
 
-    with st.expander("💬 Defence sentence for this page"):
+    with st.expander("💬 Quick Tip"):
         st.markdown("""
         *"Across 2016 to 2025 the spectral evidence points to structural urban change in Uyo:
         the built-up index trends upward while vegetation declines. Temperature maps and class-wise
